@@ -1,0 +1,36 @@
+<div  align="center" id="form-error" style="display: none; color: red;">
+  Veuillez remplir tous les champs.
+</div>
+<div id="send-error" style="display: none; color: red;">
+  Erreur lors de l'envoie des données.
+</div>
+
+<div class="container">
+  <div class="jumbotron">
+      <h2>Modify a questionu</h2>
+      <form (ngSubmit)="onSubmit()">
+      <div class="form-group has-success">
+        <label class="form-control-label">Title</label>
+          <input type="text" class="form-control is-valid" [(ngModel)]="question.title" name="title">
+      </div>
+      <div class="form-group">
+        <label>Category</label>
+        <select class="form-control" [(ngModel)]="jeu.category.id" name="category">
+          <option *ngFor="let category of categories" [ngValue]="category.id">{{ category.title }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Content</label>
+        <textarea class="form-control" rows="3" [(ngModel)]="question.content" name="content"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Author</label>
+        <textarea class="form-control" rows="3" [(ngModel)]="question.author" name="author"></textarea>
+      </div>
+      <button type="submit" class="btn btn-success">
+        Submit!
+      </button>
+    </form>
+  </div>
+</div>
+  
